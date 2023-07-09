@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #b5b6b754;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b5b6b7;
+  border-radius: 30px;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background-color: #333;
+  background: linear-gradient(#01012e, rgb(36, 0, 25));
+  min-height: 100vh;
+}
+
+div {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("image/stars1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+ul {
+  list-style: none;
+  text-align: center;
+}
+
+ul:hover a {
+  opacity: 0;
+}
+
+li {
+  margin: 14px 0;
+}
+
+li::before {
+  content: attr(data-text);
+  color: #FFF;
+  font-weight: bold;
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  font-size: 80px;
+  font-weight: bold;
+  text-transform: uppercase;
+  opacity: 0;
+  letter-spacing: 50px;
+  transition: 0.5s ease;
+  pointer-events: none;
+}
+
+li::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  background-color: #FFF;
+  border-radius: 50%;
+  transform: translate(-50%, 70%);
+  z-index: -1;
+  box-shadow: 0 0 80px orangered;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+ul li:hover::after {
+  width: 80px;
+  opacity: 0.5;
+}
+
+ul li:hover::before {
+  opacity: 0.5;
+  letter-spacing: 3px;
+}
+
+a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  background-color: darkblue;
+  padding: 5px 16px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  width: 150px;
+  transition: 0.5s ease;
+}
+
+
+ul a:hover {
+  transform: scale(1.5);
+  background-color: darkmagenta;
+  opacity: 1;
+}
